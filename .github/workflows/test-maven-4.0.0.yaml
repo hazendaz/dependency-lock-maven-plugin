@@ -12,7 +12,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    name: Tests Maven 4.0.0-rc-5
+    name: Tests Maven 4.0.0-rc-6
 
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
@@ -23,6 +23,6 @@ jobs:
           distribution: zulu
           java-version: 21
       - name: Set Maven Wrapper version
-        run: ./mvnw --batch-mode --show-version org.apache.maven.plugins:maven-wrapper-plugin:wrapper -Dmaven="4.0.0-rc-5" --no-transfer-progress
+        run: ./mvnw --batch-mode --show-version org.apache.maven.plugins:maven-wrapper-plugin:wrapper -Dmaven="4.0.0-rc-6" --no-transfer-progress
       - name: Test with Maven
-        run: ./mvnw --batch-mode --show-version verify --activate-profiles analyze,its,use-non-lts-maven-version -Dmaven.min-version=4.0.0-rc-5 -Dmaven=4.0.0-rc-5 --no-transfer-progress
+        run: ./mvnw --batch-mode --show-version verify --activate-profiles analyze,its,use-non-lts-maven-version -Dmaven.min-version=4.0.0-rc-6 -Dmaven=4.0.0-rc-6 --no-transfer-progress
